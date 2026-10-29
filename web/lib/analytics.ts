@@ -1,0 +1,2 @@
+import type { BreachEvent, Reading } from './types';
+export function getAnalytics(events:BreachEvent[],readings:Reading[],now=Date.now(),days=7){const cutoff=now-days*86400000;const period=events.filter(e=>e.start>=cutoff);const durations=events.map(e=>Math.max(0,((e.recovery??now)-e.start)/60000));return {total:events.length,frequency:period.length,averageDuration:durations.length?durations.reduce((a,b)=>a+b,0)/durations.length:0,longest:durations.length?Math.max(...durations):0,peak:readings.length?Math.max(...readings.map(r=>r.humidity)):null};}

@@ -1,0 +1,2 @@
+import type { Reading } from './types';
+export function nextReading(currentHumidity:number,currentTemperature:number,now=Date.now()):Reading{const h=Math.max(20,Math.min(85,currentHumidity+(Math.random()-.49)*2.4));const t=Math.max(15,Math.min(36,currentTemperature+(Math.random()-.5)*.6));return {id:`reading-${now}-${Math.random().toString(36).slice(2,7)}`,timestamp:now,humidity:Number(h.toFixed(1)),temperature:Number(t.toFixed(1))};}

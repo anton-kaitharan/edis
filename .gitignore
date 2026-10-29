@@ -1,0 +1,19 @@
+# dependencies / build output
+node_modules/
+web/.next/
+web/out/
+web/.npm-cache/
+web/tsconfig.tsbuildinfo
+web/next-env.d.ts
+
+# firmware build artefacts
+firmware/**/build/
+
+# scrape artefacts (third-party reference material, not part of the project)
+.firecrawl/
+
+# misc
+.env*
+*.log
+.DS_Store
+Thumbs.db
